@@ -1,0 +1,23 @@
+{
+    "name": "testEntity",
+    "repository": "App\\Repository\\TestEntityRepository",
+    "entity": "App\\Entity\\TestEntity",
+    "table": "test_entity",
+    "id": {
+        "type": "integer"
+    },
+    "fields": {
+        "newField": {
+            "associatedEntity": "post",
+            "repository": "App\\Repository\\PostRepository",
+            "entity": "App\\Entity\\Post",
+            "nullable": false
+        },
+        "slug": {
+            "fieldName": "slug",
+            "type": "string",
+            "nullable": true
+        }
+    },
+    "hasAssociations": true
+}

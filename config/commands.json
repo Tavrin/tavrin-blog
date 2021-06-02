@@ -18,5 +18,10 @@
     {
       "name": "ExecuteMigration",
       "class": "Sirius\\commands\\MigrateCommand"
+    },
+    "GenerateSitemap":
+    {
+      "name": "GenerateSitemap",
+      "class": "Sirius\\commands\\GenerateStaticSitemapCommand"
     }
 }

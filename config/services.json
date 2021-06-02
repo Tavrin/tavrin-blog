@@ -1,0 +1,12 @@
+{
+    "twig":
+    {
+        "extensions":
+          [
+            {
+              "name": "TwigExtension",
+              "class": "App\\Twig\\TwigExtension"
+            }
+          ]
+    }
+}

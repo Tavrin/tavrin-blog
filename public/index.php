@@ -3,15 +3,13 @@
 use Sirius\Kernel;
 use Sirius\http\Request;
 
-define('ROOT_DIR', dirname(__DIR__));
-
 require dirname(__DIR__) . '/vendor/autoload.php';
 header('Access-Control-Allow-Origin: *');
-
-$dotenv = Dotenv\Dotenv::createImmutable(ROOT_DIR, '.env.local');
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__) , '.env.local');
 $dotenv->load();
-$request = Request::create();
+
 $kernel = new Kernel();
+$request = Request::create();
 $response = $kernel->handleRequest($request);
 $response->send();
 exit();

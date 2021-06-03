@@ -1,4 +1,5 @@
 {
     "site_title": "Tavrin.io",
-    "admin_email": "etienne.doux@gmail.com"
+    "admin_email": "etienne.doux@gmail.com",
+    "scheme": "https://tavrin.io"
 }

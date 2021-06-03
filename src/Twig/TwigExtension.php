@@ -4,12 +4,17 @@
 namespace App\Twig;
 
 
+use Sirius\Container;
 use Sirius\utils\StringUtils;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
 class TwigExtension extends AbstractExtension
 {
+    public function __construct()
+    {
+    }
+
     public function getFilters(): array
     {
         return [

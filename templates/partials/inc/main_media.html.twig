@@ -1,0 +1,11 @@
+{% if content.post is defined and content.post is not empty %}
+    {% if content.post.media is defined and content.post.media is not empty %}
+        {% set mainMedia = content.post.media.path %}
+    {% endif %}
+{% elseif content.currentCategory is defined and content.currentCategory is not empty %}
+    {% if content.currentCategory.media is defined and content.currentCategory.media is not empty %}
+        {% set mainMedia = content.currentCategory.media.path %}
+    {% endif %}
+{% else %}
+    {% set mainMedia = '/assets/img/photo-etienne.jpg' %}
+{% endif %}

@@ -1,81 +1,184 @@
+<?xml version="1.0"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url>
+  <url>
     <loc>https://tavrin.io/</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>1.00</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog?page=1</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.80</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/login</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.80</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/backend-dev?page=1</loc>
     <priority>0.8</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/frontend-dev?page=1</loc>
     <priority>0.8</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/game-dev?page=1</loc>
     <priority>0.8</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/digital-painting?page=1</loc>
     <priority>0.8</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/culinaire?page=1</loc>
     <priority>0.8</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/uploads/cv.pdf</loc>
     <lastmod>2021-05-14T17:46:03+00:00</lastmod>
     <priority>0.80</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/frontend-dev/comment-poster-un-article-sur-ce-blog</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.80</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/culinaire/recette-nouilles-dandan</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.80</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/frontend-dev/comment-prevenir-une-attaque-xss</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.64</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/blog/game-dev/mon-premier-prototype-sous-unity</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.64</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/login/</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.64</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/register</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.64</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/forgot-password</loc>
     <lastmod>2021-05-16T14:55:31+00:00</lastmod>
     <priority>0.64</priority>
-</url>
-<url>
+  </url>
+  <url>
     <loc>https://tavrin.io/mentions-legales</loc>
     <priority>0.3</priority>
-</url>
+  </url>
+  <url>
+    <loc>https://tavrin.io/blog</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/posts/new</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/posts</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/structure</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/configuration/messages</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/structure/categories</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/structure/categories/new</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/users</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/users/new</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/comments</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/structure/medias</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/admin/structure/medias/new</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/logout</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/error</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/reset</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/confirm-email</loc>
+  </url>
+  <url>
+    <loc>https://tavrin.io/user/settings</loc>
+  </url>
+  <url type="category" id="3">
+    <loc>https://tavrin.io/blog/backend-dev</loc>
+  </url>
+  <url type="category" id="4">
+    <loc>https://tavrin.io/blog/frontend-dev</loc>
+  </url>
+  <url type="category" id="5">
+    <loc>https://tavrin.io/blog/game-dev</loc>
+  </url>
+  <url type="category" id="7">
+    <loc>https://tavrin.io/blog/digital-painting</loc>
+  </url>
+  <url type="category" id="8">
+    <loc>https://tavrin.io/blog/culinaire</loc>
+  </url>
+  <url type="post" id="27">
+    <loc>https://tavrin.io/blog/dev-backend/test-article</loc>
+  </url>
+  <url type="post" id="30">
+    <loc>https://tavrin.io/blog/dev-backend/nouveau-post</loc>
+  </url>
+  <url type="post" id="31">
+    <loc>https://tavrin.io/blog/frontend-dev/bbb</loc>
+  </url>
+  <url type="post" id="32">
+    <loc>https://tavrin.io/blog/game-dev/mon-premier-prototype-sous-unity</loc>
+  </url>
+  <url type="post" id="34">
+    <loc>https://tavrin.io/blog/frontend-dev/comment-prevenir-une-attaque-xss</loc>
+  </url>
+  <url type="post" id="35">
+    <loc>https://tavrin.io/blog/frontend-dev/comment-poster-un-article-sur-ce-blog</loc>
+  </url>
+  <url type="post" id="36">
+    <loc>https://tavrin.io/blog/frontend-dev/test-form-update-handle</loc>
+  </url>
+  <url type="post" id="37">
+    <loc>https://tavrin.io/blog/culinaire/recette-nouilles-dandan</loc>
+  </url>
+  <url type="user" id="1">
+    <loc>https://tavrin.io/membres/jeanrene91</loc>
+  </url>
+  <url type="user" id="2">
+    <loc>https://tavrin.io/membres/jeanettedu75</loc>
+  </url>
+  <url type="user" id="18">
+    <loc>https://tavrin.io/membres/admin</loc>
+  </url>
 </urlset>

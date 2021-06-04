@@ -4,8 +4,31 @@
     {% set title = "Mon blog - Etienne Doux" %}
 {% endif %}
 
-<meta name="description" content="{{ content.description ?? 'Tavrin.io - Le site du développeur web fullstack Etienne Doux, retrouvez ici mon blog traitant de différents sujets technique et de design ainsi que mes liens vers d\'autres projets'}}">
+{% if content.post is defined and content.post is not empty %}
+    {% if content.post.media is defined and content.post.media is not empty %}
+        {% set mainMedia = content.post.media.path %}
+    {% endif %}
+{% elseif content.currentCategory is defined and content.currentCategory is not empty %}
+    {% if content.currentCategory.media is defined and content.currentCategory.media is not empty %}
+        {% set mainMedia = content.currentCategory.media.path %}
+    {% endif %}
+{% else %}
+    {% set mainMedia = '/assets/img/photo-etienne.jpg' %}
+{% endif %}
 
+{% set description = content.description ?? 'Tavrin.io - Le site du développeur web fullstack Etienne Doux, retrouvez ici mon blog traitant de différents sujets technique et de design ainsi que mes liens vers d\'autres projets' %}
+
+<meta name="description" content="{{ description }}">
 <meta title="{{ title }}">
 <title>{{ title }}</title>
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image" content="{{ mainMedia }}">
+<meta property="og:url" content="{{ app.constants.scheme }}{{ content.path ?? '/' }}">
+<meta property="og:site_name" content="{{ app.constants.host }}">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:site" content="@etienne_doux" />
+<meta name="twitter:creator" content="@etienne_doux" />
+<meta name="twitter:image" content="{{ mainMedia }}" />
 <link rel="canonical" href="https://{{ app.constants.host }}{{ content.path ?? '/' }}">

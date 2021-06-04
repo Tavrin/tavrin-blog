@@ -2,6 +2,21 @@
   "host": "https://tavrin.io",
     "sitemap":
     {
-
+      "defaultName": "sitemaptest",
+      "routes":
+      [
+        {
+          "path": "/blog/{slug}",
+          "entities": ["category"]
+        },
+        {
+          "path": "{path}",
+          "entities": ["post"]
+        },
+        {
+          "path": "/membres/{slug}",
+          "entities": ["user"]
+        }
+      ]
     }
 }

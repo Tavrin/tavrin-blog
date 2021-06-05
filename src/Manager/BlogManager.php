@@ -113,14 +113,12 @@ class BlogManager
         return true;
     }
 
-    public function hydrateListing(array $entityData, Paginator $paginator = null, array $paginationOptions = null, string $column = null, string $order = null, string $category = null): ?array
+    public function hydrateListing(Paginator $paginator = null, array $paginationOptions = null, string $column = null, string $order = null, string $row = null, string $criteria = null): ?array
     {
-        isset($category) ? $categoryField = $entityData['fields']['category']['fieldName'] : $categoryField = null;
-
         if ($paginator && $paginationOptions) {
-            $content = $paginator->paginate($this->postRepository, $paginationOptions['page'], $paginationOptions['limit'], $column, $order, $categoryField, $category);
+            $content = $paginator->paginate($this->postRepository, $paginationOptions['page'], $paginationOptions['limit'], $column, $order, $row, $criteria);
         } else {
-            isset($categoryField, $category) ? $content = $this->postRepository->findBy($categoryField, $category, $column, $order) : $content = $this->postRepository->findAll($column, $order);
+            isset($row, $criteria) ? $content = $this->postRepository->findBy($row, $criteria, $column, $order) : $content = $this->postRepository->findAll($column, $order);
         }
 
         return $content;

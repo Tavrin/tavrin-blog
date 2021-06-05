@@ -5,13 +5,16 @@
 
         <div class="maw-90 m-auto mt-3 mb-3 d-f fd-c">
             <section id="home-articles" class="w-100 m-auto pt-3">
-                <div class="ta-l">
+                <div class="ta-l bb-dg3 pb-1">
                     <h1 class="fw-600">{{ content.currentCategory.name ?? 'Tous les articles'}}</h1>
+                    {% if content.currentCategory.description is defined and content.currentCategory.description is not empty %}
+                        <p class="fw-700 mt-1">{{ content.currentCategory.description }}</p>
+                    {% endif %}
                 </div>
                 <div class="post-listing-grid grid-7">
                     {% if content.items is defined and content.items is not empty %}
                         {% for post in content.items %}
-
+                         {% if post.status == 'true' %}
                             <div class="post-listing">
                                 <div class="featured-item-image">
                                     <a href="{{ post.path }}">
@@ -21,7 +24,7 @@
                                 <p class="pt-1 pb-1 fs-1c3 fw-700">
                                     <span class="d-b text-muted fs-07 tt-u mb-0-5 fw-500">
                                         <a href="{{ post.category.path }}">{{ post.category.name }}</a>
-                                        <span class="float-r"> {{ post.createdAt|date("d-m-Y") }}</span>
+                                        <span class="float-r"> {{ (post.updatedAt ?? post.createdAt)|date("d-m-Y") }}</span>
                                     </span>
                                     <a href="{{ post.path }}">
                                     {{ post.title }}
@@ -32,6 +35,7 @@
                                     Lire la suite
                                 </a>
                             </div>
+                            {% endif %}
                         {% endfor %}
                     {% else %}
                         <div class="maw-70 m-auto mt-3 mb-3 pt-3 d-f fd-c">

@@ -32,7 +32,11 @@ class EditorForm extends Form
         $entityUpdated = null;
         if ('edit' === $options['type']) {
             $entityUpdated = $entity->getUpdatedAt();
-            isset($entityUpdated) ? $entityUpdated = $entityUpdated->format("Y-m-d\TH:i:s") : $entityUpdated = null;
+            if (!isset($entityUpdated)) {
+                $entityUpdated = new \DateTime();
+            }
+
+            $entityUpdated = $entityUpdated->format("Y-m-d\TH:i:s");
         }
 
         $this->addCss('w-75 w-90-xs')

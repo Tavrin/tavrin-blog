@@ -51,7 +51,7 @@ class BlogManager
         return $post;
     }
 
-    public function updatePost(Post $post, $user): bool
+    public function updatePost(Post $post): bool
     {
         if (!$post->getSlug()) {
             $post->setSlug(StringUtils::slugify($post->getTitle()));

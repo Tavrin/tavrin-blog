@@ -7,6 +7,7 @@ use App\Forms\CategoryEditorForm;
 use App\Manager\AdminManager;
 use App\Repository\CategoryRepository;
 use App\Repository\MediaRepository;
+use App\Repository\PostRepository;
 use Sirius\controller\Controller;
 use Sirius\http\exceptions\NotFoundException;
 use Sirius\http\Request;
@@ -76,6 +77,8 @@ class CategoryController extends Controller
         $em = $this->getManager();
         $adminManager = new AdminManager($em);
         $categoryRepository = new CategoryRepository($em);
+        $postRepository = new PostRepository($em);
+
         if (!$category = $adminManager->findOneByCriteria($categoryRepository, 'slug', $slug)) {
             throw new NotFoundException('The category doesn\'t exist');
         }
@@ -90,7 +93,7 @@ class CategoryController extends Controller
                 $mediaRepository = new MediaRepository($em);
                 $category->setMedia($adminManager->findOneByCriteria($mediaRepository, 'path', $media));
             }
-            if (true === $adminManager->updateCategory($category)) {
+            if (true === $adminManager->updateCategory($category, $postRepository)) {
                 $this->redirect('/admin/structure/categories?page=1', ['type' => 'success', 'message' => "Catégorie {$categoryName} modifiée avec succès"]);
             } else {
                 $this->redirect('/admin/structure/categories/' . $slug . '/edit', ['type' => 'danger', 'message' => "La catégorie n'a pas pu être modifiée"]);

@@ -142,7 +142,10 @@ class AdminManager
         return $this->em->flush();
     }
 
-    public function updateCategory(object $entity): bool
+    /**
+     * @throws \Exception
+     */
+    public function updateCategory(object $entity, PostRepository $postRepository): bool
     {
         if (!$entity->getSlug()) {
             $entity->setSlug(StringUtils::slugify($entity->getName()));
@@ -151,6 +154,13 @@ class AdminManager
         }
 
         $entity->setPath('/blog/' . $entity->getSlug());
+
+        $posts = $postRepository->findBy('category_id', $entity->getId());
+
+        foreach ($posts as $post) {
+            $post->setPath($entity->getPath() . '/' . $post->getSlug());
+            $this->em->update($post);
+        }
 
         return $this->updateEntity($entity);
     }

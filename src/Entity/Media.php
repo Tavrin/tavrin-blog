@@ -19,39 +19,39 @@ class Media
      private int $id;
 
     /**
-    * @var string
+    * @var string|null
     */
-    private string $name;
+    private ?string $name = null;
 
     /**
     * @var string|null
     */
-    private ?string $alt;
+    private ?string $alt = null;
 
     /**
-    * @var MediaType
+    * @var MediaType|null
     */
-    private MediaType $type;
+    private ?MediaType $type = null;
 
     /**
-    * @var string
+    * @var string|null
     */
-    private string $path;
+    private ?string $path = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    private string $slug;
+    private ?string $slug = null;
 
     /**
-    * @var string
+    * @var string|null
     */
-    private string $uuid;
+    private ?string $uuid = null;
 
     /**
     * @var bool
     */
-    private bool $status;
+    private ?bool $status = null;
 
     /**
     * @var Datetime
@@ -61,7 +61,7 @@ class Media
     /**
     * @var Datetime|null
     */
-    private ?Datetime $updatedAt;
+    private ?Datetime $updatedAt = null;
 
     public function getId(): ?int
     {

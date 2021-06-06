@@ -61,7 +61,9 @@ class BlogController extends Controller
         $commentForm = new CommentForm($request,$comment, $this->session, ['name' => 'commentForm', 'wrapperClass' => 'mb-1']);
         $blogManager = new BlogManager($this->getManager(), $postRepository);
         $postData = $this->getManager()->getEntityData('post');
-        $post = $postRepository->findOneBy('slug', $slug);
+        if (empty($post = $postRepository->findOneBy('slug', $slug))) {
+            throw new NotFoundException("L'article n'existe pas");
+        }
         $content['post'] = $blogManager->hydratePost($post, $postData);
         $content['comments'] = $commentRepository->findBy('post_id', $post->getId(), 'created_at', 'DESC');
         $content['categories'] = $categoryRepository->findAll();

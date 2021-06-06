@@ -98,17 +98,20 @@ class MediaController extends Controller
             if ($mediaForm->isValid) {
                 $mediaFile = $mediaForm->getData('mediaFile');
 
-                $oldFile = new PublicFile($media->getPath());
-                $oldFile->delete();
+                if (!empty($mediaFile)) {
+                    $oldFile = new PublicFile($media->getPath());
+                    $oldFile->delete();
 
-                $mediaFile->put(self::UPLOAD_ROOT . $type . '/', $media->getSlug() . '.' . $mediaFile->getUploadExtension());
-                $media->setPath($mediaFile->getRelativePath());
+                    $mediaFile->put(self::UPLOAD_ROOT . $type . '/', $media->getSlug() . '.' . $mediaFile->getUploadExtension());
+                    $media->setPath($mediaFile->getRelativePath());
+                }
+
+                $media->setUpdatedAt(new \DateTime());
                 if (true === $adminManager->updateEntity($media)) {
                     $mediaName = $media->getName();
-                    $this->redirect("/admin/structure/medias/{$type}", ['type' => 'success', 'message' => 'Media type ' . $mediaName . ' modifié avec succès']);
+                    $this->redirect("/admin/structure/medias/{$type}?page=1", ['type' => 'success', 'message' => 'Media ' . $mediaName . ' modifié avec succès']);
                 }
             }
-
             $this->redirect("/admin/structure/medias/{$type}/new", ['type' => 'danger', 'message' => "Le média n'a pas pu être modifié"]);
         }
 

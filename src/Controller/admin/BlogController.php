@@ -129,7 +129,7 @@ class BlogController extends Controller
                 $post->setMedia($adminManager->findOneByCriteria($mediaRepository, 'path', $media));
             }
 
-            if ($blogManager->updatePost($post, $this->getUser())) {
+            if ($blogManager->updatePost($post)) {
                 $this->redirect('/admin/posts?page=1', ['type' => 'success', 'message' => 'Article mis à jour avec succès']);
             }
 
